@@ -139,10 +139,9 @@ public class Submission
 	    		System.out.println(label + "\t" + this.guidStats.getInt(label));
 	    	}
 
-	    	//System.out.println(this.guidStats.names());
-
     	}catch (Exception e) {
     		System.out.println("Exception in main");
+    		e.printStackTrace();
     		throw e;
     	}
 	}

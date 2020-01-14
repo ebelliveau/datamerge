@@ -6,13 +6,14 @@ import org.json.JSONException;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import java.io.IOException;
 
 import org.apache.commons.io.IOUtils;
 
 public class CSVReader 
 {
 
-	public JSONArray readFile(String csvFile) throws JSONException, FileNotFoundException {
+	public JSONArray readFile(String csvFile) throws JSONException, FileNotFoundException, IOException {
 		// Reads input from the file and converts to JSON
 		String input = "";
 		try {
@@ -22,6 +23,7 @@ public class CSVReader
 		    inputStream.close();
 		}catch(Exception e) {
 			e.printStackTrace();
+			throw e;
 		}
 		JSONArray toRet = (JSONArray)CDL.toJSONArray(input);
 		return toRet;

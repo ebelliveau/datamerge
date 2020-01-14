@@ -28,8 +28,9 @@ public class CSVWriter
 			}
 			System.out.println("Output " + String.valueOf(inputData.size()) + " records to " + fileName);
 
-		} catch (Exception ex) {
-			ex.printStackTrace();
+		} catch (Exception e) {
+			e.printStackTrace();
+			throw e;
 		}
 
 	}

@@ -7,7 +7,7 @@ import org.json.JSONException;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
-
+import java.io.IOException;
 import org.apache.commons.io.IOUtils;
 
 public class XMLReader 
@@ -29,7 +29,7 @@ public class XMLReader
 			</report>
 	*/
 
-	public JSONArray readFile(String csvFile) throws JSONException, FileNotFoundException {
+	public JSONArray readFile(String csvFile) throws JSONException, FileNotFoundException, IOException {
 		// Reads input from the file and converts to JSON
 		String input = "";
 		try {
@@ -39,6 +39,7 @@ public class XMLReader
 		    inputStream.close();
 		}catch(Exception e) {
 			e.printStackTrace();
+			throw e;
 		}
 		JSONObject obj = (JSONObject)XML.toJSONObject(input);
 		JSONArray toRet = obj.getJSONObject("records").getJSONArray("report");
