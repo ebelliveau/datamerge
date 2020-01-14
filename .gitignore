@@ -1,1 +1,3 @@
 dataMerge/target
+dataMerge/target/*
+.DS_Store
