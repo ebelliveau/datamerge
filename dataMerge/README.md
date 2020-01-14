@@ -6,4 +6,5 @@ To run, simply package the executable jar:
 
 Then execute the produced jarfile in the `target` directory:
 
-`java -jar target/dataMerge-1.0-SNAPSHOT.jar`
+`cs target`
+`java -jar dataMerge-1.0-SNAPSHOT-jar-with-dependencies.jar`
